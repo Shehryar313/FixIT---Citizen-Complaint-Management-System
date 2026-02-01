@@ -1,0 +1,80 @@
+/* src/pages/FileComplaint.css */
+.filecomplaint-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.filecomplaint-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.filecomplaint-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="80" fill="%23ffffff15"/><circle cx="800" cy="300" r="120" fill="%23ffffff10"/><circle cx="600" cy="700" r="100" fill="%23ffffff12"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-circle-large {
+  width: 140px;
+  height: 140px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+.text-shadow {
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.complaint-form-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px !important;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.complaint-form-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3) !important;
+}
+
+.input-glow {
+  border-radius: 15px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.input-glow:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+  background: white;
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}

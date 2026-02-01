@@ -1,0 +1,187 @@
+/* src/pages/Home.css - ULTRA MODERN & INTERACTIVE HOME PAGE */
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background Waves */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(120, 219, 226, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 242, 96, 0.2) 0%, transparent 50%);
+  animation: wave 20s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-25%) translateY(-10%); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+/* Floating Logo Animation */
+.logo-wrapper {
+  display: inline-block;
+  animation: float 6s ease-in-out infinite;
+}
+
+.logo-icon {
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.37),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.logo-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(0, 191, 255, 0.6);
+}
+
+.logo-icon svg {
+  color: white;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Title & Text */
+.main-title {
+  font-size: 6.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ffffff, #00d4ff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -3px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #a5d8ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.3rem;
+  color: #e0f2fe;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #86c1ff;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Interactive Buttons */
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 16px 40px !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.btn-animate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.7s;
+}
+
+.btn-animate:hover::before {
+  left: 100%;
+}
+
+.btn-animate:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.btn-animate:active {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Primary Button Glow */
+.btn-animate[variant="primary"] {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+}
+
+.btn-animate[variant="outline-light"] {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: white;
+}
+
+.btn-animate[variant="outline-light"]:hover {
+  background: white;
+  color: #2a5298;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-title { font-size: 5rem; }
+  .subtitle { font-size: 1.7rem; }
+}
+
+@media (max-width: 768px) {
+  .main-title { font-size: 4rem; }
+  .subtitle { font-size: 1.5rem; }
+  .description { font-size: 1.1rem; }
+  .logo-icon { width: 110px; height: 110px; }
+  .logo-icon svg { width: 60px; height: 60px; }
+  .buttons-group { flex-direction: column; align-items: center; }
+  .btn-animate { width: 80%; max-width: 350px; }
+}
+
+@media (max-width: 480px) {
+  .main-title { font-size: 3.2rem; }
+  .tagline { font-size: 1.2rem; }
+}
