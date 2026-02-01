@@ -1,1 +1,2 @@
-
+A full-stack web app for citizens to report issues (e.g., broken roads, drainage) with photos, and officials to process them. Features role-based access, registration, login (citizen + official by email), complaint filing, dashboard views, status updates, officer assignment, resource allocation, and complaint cancellation. Built with React, Node.js/Express, SQL Server.
+Tech: React Bootstrap UI, Multer for uploads, bcrypt security. Secure, responsive, easy to deploy.
